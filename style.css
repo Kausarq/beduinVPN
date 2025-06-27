@@ -1,14 +1,57 @@
-
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
+    background: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
 }
-/* ... (остальные стили из предыдущего примера) ... */
+
+.logo {
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.info {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+button {
+    background: orange;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
