@@ -1,21 +1,17 @@
-// Список ВАШИХ ключей (замените на свои!)
-const keys = [
-    "ss://ключ1@server1.com:12345",
-    "ss://ключ2@server1.com:12345",
-    "ss://ключ3@server2.com:54321",
-    // Добавьте свои ключи (100+ штук)
-];
+// ЮMoney (замените на свою ссылку)
+function pay() {
+    window.location.href = "https://yoomoney.ru/quickpay/button-widget?targets=VPN&default-sum=150&button-text=11&any-card-payment-type=on&successURL=https://ВАШНИК.github.io/beduin-vpn/connect.html";
+}
 
-// Получаем номер ключа из URL (например: connect.html?key=3)
-const keyNumber = Math.max(1, parseInt(new URLSearchParams(window.location.search).get('key')) || 1);
+// Проверка оплаты (заглушка)
+function connect() {
+    alert("Подключение... (здесь будет ключ)");
+}
 
-// Показываем ключ (если номер больше количества — берем первый)
-document.getElementById('vpn-key').textContent = keys[keyNumber - 1] || keys[0];
+// Если в URL есть параметр ?paid=1 (после оплаты)
+if (new URLSearchParams(window.location.search).has('paid')) {
+    document.getElementById('balance').textContent = "150₽";
+    document.getElementById('days').textContent = "30 дней";
+    document.querySelector('button[disabled]').disabled = false;
+}
 
-// Кнопка копирования
-document.getElementById('copy-key')?.addEventListener('click', function() {
-    const key = document.getElementById('vpn-key').textContent;
-    navigator.clipboard.writeText(key).then(() => {
-        alert('Ссылка скопирована! Вставьте её в Outline.');
-    });
-});
